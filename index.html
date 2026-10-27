@@ -1,0 +1,747 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lesson 2 - Cách phát âm của đuôi -s | ECV EDU CENTER</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #059669;
+      --primary-hover: #047857;
+      --primary-light: #ecfdf5;
+      --secondary: #0284c7;
+      --accent: #f97316;
+      --bg-main: #f8fafc;
+      --bg-card: #ffffff;
+      --text-main: #0f172a;
+      --text-muted: #64748b;
+      --border: #e2e8f0;
+      --correct: #10b981;
+      --correct-bg: #d1fae5;
+      --incorrect: #ef4444;
+      --incorrect-bg: #fee2e2;
+      --radius: 12px;
+      --shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    body {
+      background-color: var(--bg-main);
+      color: var(--text-main);
+      line-height: 1.6;
+      padding-bottom: 60px;
+    }
+
+    header {
+      background: #ffffff;
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.03);
+    }
+
+    .header-container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1rem;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      .logo-title { font-size: 0.95rem; }
+      .logo-sub { max-width: 220px; }
+    }
+
+    .logo-title {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--text-main);
+      line-height: 1.2;
+    }
+
+    .logo-sub {
+      font-size: 0.75rem;
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    nav {
+      display: flex;
+      gap: 8px;
+      background: #f1f5f9;
+      padding: 4px;
+      border-radius: 10px;
+    }
+
+    .nav-btn {
+      border: none;
+      background: transparent;
+      padding: 8px 16px;
+      font-size: 0.875rem;
+      font-weight: 600;
+      color: var(--text-muted);
+      border-radius: 8px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .nav-btn.active {
+      background: #ffffff;
+      color: var(--primary);
+      box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    }
+
+    .main-container {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1.5rem;
+    }
+
+    .mode-selector {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 1.5rem;
+      background: #ffffff;
+      padding: 12px 20px;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+    }
+
+    .mode-switch {
+      display: flex;
+      gap: 8px;
+    }
+
+    .mode-btn {
+      padding: 6px 14px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      font-size: 0.85rem;
+      font-weight: 600;
+      cursor: pointer;
+      color: var(--text-muted);
+      transition: all 0.2s;
+    }
+
+    .mode-btn.active {
+      background: var(--primary-light);
+      color: var(--primary);
+      border-color: var(--primary);
+    }
+
+    /* Quiz Styling */
+    .quiz-card {
+      background: var(--bg-card);
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      padding: 24px;
+      margin-bottom: 20px;
+      box-shadow: var(--shadow);
+    }
+
+    .question-header {
+      display: flex;
+      justify-content: space-between;
+      margin-bottom: 12px;
+    }
+
+    .q-number {
+      font-weight: 700;
+      color: var(--primary);
+      background: var(--primary-light);
+      padding: 4px 12px;
+      border-radius: 20px;
+      font-size: 0.85rem;
+    }
+
+    .options-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin-top: 16px;
+    }
+
+    @media (max-width: 640px) {
+      .options-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .option-btn {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 14px 18px;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      background: #ffffff;
+      cursor: pointer;
+      text-align: left;
+      transition: all 0.2s ease;
+      width: 100%;
+    }
+
+    .option-btn:hover {
+      border-color: var(--primary);
+      background: #f8fafc;
+    }
+
+    .option-btn.correct {
+      background-color: var(--correct-bg) !important;
+      border-color: var(--correct) !important;
+      color: #065f46 !important;
+    }
+
+    .option-btn.incorrect {
+      background-color: var(--incorrect-bg) !important;
+      border-color: var(--incorrect) !important;
+      color: #991b1b !important;
+    }
+
+    .opt-left {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .opt-key {
+      font-weight: 700;
+      color: var(--text-muted);
+      width: 26px;
+      height: 26px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #f1f5f9;
+      border-radius: 50%;
+      font-size: 0.85rem;
+    }
+
+    .opt-word {
+      font-size: 1rem;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .opt-ipa {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      margin-left: 6px;
+      font-weight: 400;
+    }
+
+    .audio-icon {
+      background: var(--primary-light);
+      color: var(--primary);
+      border: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      transition: transform 0.1s ease;
+      font-size: 0.9rem;
+    }
+
+    .audio-icon:hover {
+      transform: scale(1.1);
+    }
+
+    /* Explanation Box */
+    .explanation-box {
+      margin-top: 16px;
+      padding: 16px;
+      border-radius: 10px;
+      background: #f8fafc;
+      border-left: 4px solid var(--primary);
+      display: none;
+    }
+
+    .explanation-box.show {
+      display: block;
+    }
+
+    /* Flashcard Layout */
+    .flashcard-wrapper {
+      perspective: 1000px;
+      margin: 1rem auto 2rem auto;
+      max-width: 650px;
+    }
+
+    .flashcard {
+      width: 100%;
+      min-height: 440px;
+      background: white;
+      border-radius: 16px;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+    }
+
+    .flashcard.flipped {
+      transform: rotateY(180deg);
+    }
+
+    .card-front, .card-back {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      backface-visibility: hidden;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      border-radius: 16px;
+      box-sizing: border-box;
+      overflow-y: auto;
+    }
+
+    .card-back {
+      transform: rotateY(180deg);
+      background: #fafafa;
+    }
+
+    .meanings-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 10px;
+      margin-top: 12px;
+      text-align: left;
+    }
+
+    @media (max-width: 480px) {
+      .meanings-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .meaning-card {
+      background: white;
+      padding: 10px 12px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      font-size: 0.85rem;
+    }
+
+    .meaning-title {
+      font-weight: 700;
+      color: var(--primary);
+    }
+
+    .fc-controls {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      margin-top: 15px;
+    }
+
+    .btn-action {
+      background: var(--primary);
+      color: white;
+      border: none;
+      padding: 10px 24px;
+      border-radius: 8px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: background 0.2s;
+    }
+
+    .btn-action:hover {
+      background: var(--primary-hover);
+    }
+
+    /* Table Search Styling */
+    .table-container {
+      background: white;
+      border-radius: var(--radius);
+      border: 1px solid var(--border);
+      overflow-x: auto;
+    }
+
+    .search-bar {
+      padding: 16px;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .search-input {
+      width: 100%;
+      padding: 12px 16px;
+      border-radius: 8px;
+      border: 1px solid var(--border);
+      font-size: 0.95rem;
+      outline: none;
+    }
+
+    .search-input:focus {
+      border-color: var(--primary);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: left;
+    }
+
+    th, td {
+      padding: 14px 18px;
+      border-bottom: 1px solid var(--border);
+      font-size: 0.9rem;
+    }
+
+    th {
+      background: #f8fafc;
+      font-weight: 700;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <a href="#" class="logo">
+        <div>
+          <div class="logo-title">ECV EDU CENTER</div>
+          <div class="logo-sub">Lesson 2: Cách phát âm của đuôi -s</div>
+        </div>
+      </a>
+      <nav>
+        <button class="nav-btn active" onclick="switchEx(1)">Exercise 1</button>
+        <button class="nav-btn" onclick="switchEx(2)">Exercise 2</button>
+        <button class="nav-btn" onclick="switchEx('ipa')">IPA & Tra Cứu</button>
+      </nav>
+    </div>
+  </header>
+
+  <div class="main-container">
+    <div class="mode-selector" id="modeHeader">
+      <h2 id="exTitle" style="font-size: 1.15rem; font-weight: 700;">Exercise 1: Pronunciation</h2>
+      <div class="mode-switch">
+        <button class="mode-btn active" onclick="setMode('quiz')">Trắc Nghiệm</button>
+        <button class="mode-btn" onclick="setMode('flashcard')">Flashcard Lật Thẻ</button>
+      </div>
+    </div>
+
+    <!-- Quiz View -->
+    <div id="quizView"></div>
+
+    <!-- Flashcard View -->
+    <div id="flashcardView" style="display: none;">
+      <div class="flashcard-wrapper">
+        <div class="flashcard" id="card">
+          <div class="card-front">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <span style="font-size: 0.85rem; font-weight: 700; color: var(--primary);" id="fcNum">Câu 1/25</span>
+              <button onclick="flipCardManual()" style="background: var(--primary-light); color: var(--primary); border: none; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 600; cursor: pointer;">Lật xem đáp án 🔄</button>
+            </div>
+            <div style="margin: 10px 0;">
+              <h3 style="font-size: 0.95rem; margin-bottom: 12px; color: var(--text-muted); font-weight: 600;">Chọn từ có phần gạch chân phát âm khác:</h3>
+              <div id="fcOptions" style="display: flex; flex-direction: column; gap: 8px;"></div>
+            </div>
+            <div style="font-size: 0.78rem; color: var(--text-muted); text-align: center;">Click vào đáp án để kiểm tra đúng/sai!</div>
+          </div>
+          <div class="card-back">
+            <div>
+              <div style="display: flex; justify-content: space-between; align-items: center;">
+                <span style="font-size: 0.85rem; font-weight: 700; color: var(--primary);">Đáp Án Đúng:</span>
+                <button onclick="flipCardManual()" style="background: #f1f5f9; color: var(--text-main); border: none; padding: 4px 10px; border-radius: 6px; font-size: 0.8rem; font-weight: 600; cursor: pointer;">Quay lại ◀</button>
+              </div>
+              <h2 id="fcCorrectWord" style="font-size: 1.5rem; color: var(--primary); margin: 4px 0;">Word</h2>
+              <p id="fcRule" style="font-size: 0.85rem; color: var(--text-main); line-height: 1.4; background: #fff; padding: 8px; border-radius: 8px; border: 1px solid var(--border);"></p>
+            </div>
+            <div style="margin-top: 8px;">
+              <div style="font-size: 0.85rem; font-weight: 700; color: var(--text-main);">Nghĩa tiếng Việt Từ Vựng:</div>
+              <div class="meanings-grid" id="fcMeanings"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="fc-controls">
+        <button class="btn-action" onclick="prevCard()">← Câu Trước</button>
+        <button class="btn-action" onclick="nextCard()">Câu Tiếp →</button>
+      </div>
+    </div>
+
+    <!-- IPA Search View -->
+    <div id="ipaView" style="display: none;">
+      <div class="table-container">
+        <div class="search-bar">
+          <input type="text" id="searchInput" class="search-input" placeholder="Nhập từ vựng hoặc phiên âm để tìm kiếm..." onkeyup="filterTable()">
+        </div>
+        <table>
+          <thead>
+            <tr>
+              <th>Từ vựng</th>
+              <th>Phiên âm IPA</th>
+              <th>Phát âm</th>
+              <th>Nghĩa tiếng Việt</th>
+            </tr>
+          </thead>
+          <tbody id="dictTable"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const rawData = {
+      1: [
+        { id: 1, opts: [{w: "proofs", ipa: "/ pruːfs /", mean: "bằng chứng"}, {w: "books", ipa: "/ bʊks /", mean: "sách"}, {w: "points", ipa: "/ pɔɪnts /", mean: "điểm; vị trí hoặc ý chính"}, {w: "days", ipa: "/ ˈdeɪz /", mean: "ngày"}], ans: 3, rule: "Đáp án theo tài liệu: D. days." },
+        { id: 2, opts: [{w: "asks", ipa: "/ ˈɑːsks /", mean: "hỏi; yêu cầu"}, {w: "breathes", ipa: "/ briːðz /", mean: "thở"}, {w: "breaths", ipa: "/ breθs /", mean: "nhịp thở"}, {w: "hopes", ipa: "/ həʊps /", mean: "hy vọng; mong muốn"}], ans: 1, rule: "Đáp án theo tài liệu: B. breathes." },
+        { id: 3, opts: [{w: "sees", ipa: "/ ˈsiːz /", mean: "nhìn thấy"}, {w: "sports", ipa: "/ spɔːts /", mean: "thể thao"}, {w: "pools", ipa: "/ puːlz /", mean: "hồ bơi; vùng chứa nước"}, {w: "trains", ipa: "/ treɪnz /", mean: "tàu hỏa"}], ans: 1, rule: "Đáp án theo tài liệu: B. sports." },
+        { id: 4, opts: [{w: "tombs", ipa: "/ tuːmz /", mean: "mộ; lăng mộ"}, {w: "lamps", ipa: "/ læmps /", mean: "đèn"}, {w: "brakes", ipa: "/ breɪks /", mean: "phanh xe"}, {w: "invites", ipa: "/ ɪnˈvaɪts /", mean: "mời"}], ans: 0, rule: "Đáp án theo tài liệu: A. tombs." },
+        { id: 5, opts: [{w: "books", ipa: "/ bʊks /", mean: "sách"}, {w: "floors", ipa: "/ flɔː(r)z /", mean: "sàn nhà; tầng lầu"}, {w: "combs", ipa: "/ kəʊmz /", mean: "lược"}, {w: "drums", ipa: "/ drʌmz /", mean: "trống (nhạc cụ)"}], ans: 0, rule: "Đáp án theo tài liệu: A. books." },
+        { id: 6, opts: [{w: "cats", ipa: "/ kæts /", mean: "mèo"}, {w: "tapes", ipa: "/ teɪps /", mean: "băng; dải băng"}, {w: "rides", ipa: "/ raɪdz /", mean: "đi xe; cưỡi"}, {w: "cooks", ipa: "/ kʊks /", mean: "nấu ăn; đầu bếp"}], ans: 2, rule: "Đáp án theo tài liệu: C. rides." },
+        { id: 7, opts: [{w: "walks", ipa: "/ wɔːks /", mean: "đi bộ"}, {w: "begins", ipa: "/ bɪˈɡɪnz /", mean: "bắt đầu"}, {w: "helps", ipa: "/ helps /", mean: "giúp đỡ"}, {w: "cuts", ipa: "/ kʌts /", mean: "cắt"}], ans: 1, rule: "Đáp án theo tài liệu: B. begins." },
+        { id: 8, opts: [{w: "shoots", ipa: "/ ʃuːts /", mean: "bắn; sút bóng"}, {w: "grounds", ipa: "/ ɡraʊndz /", mean: "khu đất; căn cứ"}, {w: "concentrates", ipa: "/ ˈkɒnsəntreɪts /", mean: "tập trung"}, {w: "forests", ipa: "/ ˈfɒrɪsts /", mean: "rừng"}], ans: 1, rule: "Đáp án theo tài liệu: B. grounds." },
+        { id: 9, opts: [{w: "helps", ipa: "/ helps /", mean: "giúp đỡ"}, {w: "laughs", ipa: "/ lɑːfs /", mean: "cười"}, {w: "cooks", ipa: "/ kʊks /", mean: "nấu ăn; đầu bếp"}, {w: "finds", ipa: "/ faɪndz /", mean: "tìm thấy"}], ans: 3, rule: "Đáp án theo tài liệu: D. finds." },
+        { id: 10, opts: [{w: "hours", ipa: "/ ˈaʊə(r)z /", mean: "giờ"}, {w: "fathers", ipa: "/ ˈfɑːðə(r)z /", mean: "những người cha"}, {w: "dreams", ipa: "/ driːmz /", mean: "giấc mơ; ước mơ"}, {w: "thinks", ipa: "/ ˈθɪŋks /", mean: "suy nghĩ"}], ans: 3, rule: "Đáp án theo tài liệu: D. thinks." }
+      ],
+      2: [
+        { id: 1, opts: [{w: "beds", ipa: "/ ˈbedz /", mean: "giường"}, {w: "doors", ipa: "/ dɔː(r)z /", mean: "cửa ra vào"}, {w: "plays", ipa: "/ ˈpleɪz /", mean: "chơi; biểu diễn"}, {w: "students", ipa: "/ ˈstjuːdnts /", mean: "học sinh; sinh viên"}], ans: 3, rule: "Đáp án theo tài liệu: D. students." },
+        { id: 2, opts: [{w: "arms", ipa: "/ ɑːmz /", mean: "cánh tay"}, {w: "suits", ipa: "/ suːts /", mean: "bộ com-lê; phù hợp"}, {w: "chairs", ipa: "/ tʃeə(r)z /", mean: "ghế"}, {w: "boards", ipa: "/ bɔːdz /", mean: "tấm ván; bảng"}], ans: 1, rule: "Đáp án theo tài liệu: B. suits." },
+        { id: 3, opts: [{w: "boxes", ipa: "/ ˈbɒksɪz /", mean: "hộp"}, {w: "classes", ipa: "/ ˈklɑːsɪz /", mean: "lớp học; buổi học"}, {w: "potatoes", ipa: "/ pəˈteɪtəʊz /", mean: "khoai tây"}, {w: "finishes", ipa: "/ ˈfɪnɪʃɪz /", mean: "kết thúc; hoàn thành"}], ans: 2, rule: "Đáp án theo tài liệu: C. potatoes." },
+        { id: 4, opts: [{w: "relieves", ipa: "/ rɪˈliːvz /", mean: "làm dịu; giảm bớt"}, {w: "invents", ipa: "/ ɪnˈvents /", mean: "phát minh"}, {w: "buys", ipa: "/ baɪz /", mean: "mua"}, {w: "deals", ipa: "/ diːlz /", mean: "thỏa thuận; cách xử lý"}], ans: 1, rule: "Đáp án theo tài liệu: B. invents." },
+        { id: 5, opts: [{w: "dreams", ipa: "/ driːmz /", mean: "giấc mơ; ước mơ"}, {w: "heals", ipa: "/ hiːlz /", mean: "chữa lành"}, {w: "kills", ipa: "/ kɪlz /", mean: "giết; làm chết"}, {w: "tasks", ipa: "/ tɑːsks /", mean: "nhiệm vụ; công việc"}], ans: 3, rule: "Đáp án theo tài liệu: D. tasks." },
+        { id: 6, opts: [{w: "resources", ipa: "/ rɪˈzɔːsɪz /", mean: "tài nguyên; nguồn lực"}, {w: "stages", ipa: "/ ˈsteɪdʒɪz /", mean: "giai đoạn; sân khấu"}, {w: "preserves", ipa: "/ prɪˈzɜːvz /", mean: "bảo tồn; giữ gìn"}, {w: "focuses", ipa: "/ ˈfəʊkəsɪz /", mean: "tập trung vào"}], ans: 2, rule: "Đáp án theo tài liệu: C. preserves." },
+        { id: 7, opts: [{w: "carriages", ipa: "/ ˈkærɪdʒɪz /", mean: "toa xe; xe ngựa"}, {w: "whistles", ipa: "/ ˈwɪsl̩z /", mean: "tiếng còi; còi"}, {w: "assures", ipa: "/ əˈʃɔː(r)z /", mean: "đảm bảo; trấn an"}, {w: "costumes", ipa: "/ ˈkɒstjuːmz /", mean: "trang phục hóa trang"}], ans: 0, rule: "Đáp án theo tài liệu: A. carriages." },
+        { id: 8, opts: [{w: "offers", ipa: "/ ˈɒfə(r)z /", mean: "đề nghị; cung cấp"}, {w: "mounts", ipa: "/ maʊnts /", mean: "leo lên; lắp đặt"}, {w: "pollens", ipa: "/ ˈpɒlənz /", mean: "phấn hoa"}, {w: "swords", ipa: "/ sɔːdz /", mean: "kiếm"}], ans: 1, rule: "Đáp án theo tài liệu: B. mounts." },
+        { id: 9, opts: [{w: "miles", ipa: "/ maɪlz /", mean: "dặm"}, {w: "words", ipa: "/ ˈwɜːdz /", mean: "từ ngữ"}, {w: "accidents", ipa: "/ ˈæksɪdənts /", mean: "tai nạn; sự cố"}, {w: "names", ipa: "/ ˈneɪmz /", mean: "tên gọi"}], ans: 2, rule: "Đáp án theo tài liệu: C. accidents." },
+        { id: 10, opts: [{w: "sports", ipa: "/ spɔːts /", mean: "thể thao"}, {w: "households", ipa: "/ ˈhaʊshəʊldz /", mean: "hộ gia đình"}, {w: "minds", ipa: "/ maɪndz /", mean: "tâm trí; trí óc"}, {w: "plays", ipa: "/ ˈpleɪz /", mean: "chơi; biểu diễn"}], ans: 0, rule: "Đáp án theo tài liệu: A. sports." },
+        { id: 11, opts: [{w: "pools", ipa: "/ puːlz /", mean: "hồ bơi; vùng chứa nước"}, {w: "trucks", ipa: "/ trʌks /", mean: "xe tải"}, {w: "umbrellas", ipa: "/ ʌmˈbreləz /", mean: "ô; dù"}, {w: "workers", ipa: "/ ˈwɜːkə(r)z /", mean: "người lao động"}], ans: 1, rule: "Đáp án theo tài liệu: B. trucks." },
+        { id: 12, opts: [{w: "programs", ipa: "/ ˈprəʊɡræmz /", mean: "chương trình"}, {w: "individuals", ipa: "/ ˌɪndɪˈvɪdʒʊəlz /", mean: "cá nhân"}, {w: "subjects", ipa: "/ səbˈdʒekts /", mean: "môn học; chủ đề"}, {w: "celebrations", ipa: "/ ˌselɪˈbreɪʃn̩z /", mean: "lễ kỷ niệm; hoạt động ăn mừng"}], ans: 2, rule: "Đáp án theo tài liệu: C. subjects." },
+        { id: 13, opts: [{w: "houses", ipa: "/ ˈhaʊzɪz /", mean: "nhà; những ngôi nhà"}, {w: "horses", ipa: "/ ˈhɔːsɪz /", mean: "ngựa"}, {w: "matches", ipa: "/ ˈmætʃɪz /", mean: "trận đấu; que diêm"}, {w: "wives", ipa: "/ waɪvz /", mean: "những người vợ"}], ans: 3, rule: "Đáp án theo tài liệu: D. wives." },
+        { id: 14, opts: [{w: "barracks", ipa: "Chưa cung cấp IPA", mean: "doanh trại"}, {w: "series", ipa: "Chưa cung cấp IPA", mean: "loạt; chuỗi"}, {w: "means", ipa: "Chưa cung cấp IPA", mean: "phương tiện; cách thức"}, {w: "headquarters", ipa: "Chưa cung cấp IPA", mean: "trụ sở chính"}], ans: null, rule: "Tài liệu bạn gửi chưa có đáp án và phiên âm cho câu này." },
+        { id: 15, opts: [{w: "crossroads", ipa: "/ ˈkrɒsrəʊdz /", mean: "ngã tư; bước ngoặt"}, {w: "species", ipa: "/ ˈspiːʃiːz /", mean: "loài"}, {w: "works", ipa: "/ ˈwɜːks /", mean: "làm việc; hoạt động; tác phẩm"}, {w: "mosquitoes", ipa: "/ məˈskiːtəʊz /", mean: "muỗi"}], ans: 2, rule: "Đáp án theo tài liệu: C. works." }
+      ]
+    };
+
+    let currentEx = 1;
+    let currentMode = 'quiz';
+    let fcIndex = 0;
+    let fcAnswered = false;
+
+    // Gộp tất cả 60 câu hỏi từ các Exercise lại cho Flashcard
+    function getAllFlashcardQuestions() {
+      let all = [];
+      Object.values(rawData).forEach(ex => {
+        all = all.concat(ex);
+      });
+      return all;
+    }
+
+    function switchEx(ex) {
+      document.querySelectorAll('.nav-btn').forEach((btn, idx) => {
+        btn.classList.toggle('active', (ex === 'ipa' && idx === 2) || idx === ex - 1);
+      });
+
+      if (ex === 'ipa') {
+        document.getElementById('modeHeader').style.display = 'none';
+        document.getElementById('quizView').style.display = 'none';
+        document.getElementById('flashcardView').style.display = 'none';
+        document.getElementById('ipaView').style.display = 'block';
+        renderTable();
+      } else {
+        currentEx = ex;
+        document.getElementById('modeHeader').style.display = 'flex';
+        document.getElementById('exTitle').innerText = `Exercise ${ex}: Pronunciation`;
+        document.getElementById('ipaView').style.display = 'none';
+        setMode(currentMode);
+      }
+    }
+
+    function setMode(mode) {
+      currentMode = mode;
+      document.querySelectorAll('.mode-btn').forEach((btn, idx) => {
+        btn.classList.toggle('active', (mode === 'quiz' && idx === 0) || (mode === 'flashcard' && idx === 1));
+      });
+
+      if (mode === 'quiz') {
+        document.getElementById('quizView').style.display = 'block';
+        document.getElementById('flashcardView').style.display = 'none';
+        renderQuiz();
+      } else {
+        document.getElementById('quizView').style.display = 'none';
+        document.getElementById('flashcardView').style.display = 'block';
+        fcIndex = 0;
+        renderCard();
+      }
+    }
+
+    function playAudio(text) {
+      window.speechSynthesis.cancel();
+      const msg = new SpeechSynthesisUtterance(text);
+      msg.lang = 'en-US';
+      window.speechSynthesis.speak(msg);
+    }
+
+    function renderQuiz() {
+      const data = rawData[currentEx] || rawData[1];
+      const container = document.getElementById('quizView');
+      container.innerHTML = data.map((q, qIdx) => `
+        <div class="quiz-card" id="qcard_${currentEx}_${qIdx}">
+          <div class="question-header">
+            <span class="q-number">Câu ${qIdx + 1}</span>
+          </div>
+          <p style="font-weight: 600; font-size: 0.95rem;">Chọn từ có phần gạch chân phát âm khác:</p>
+          <div class="options-grid">
+            ${q.opts.map((opt, oIdx) => `
+              <div class="option-btn" id="opt_${currentEx}_${qIdx}_${oIdx}" onclick="checkQuizAns(${currentEx}, ${qIdx}, ${oIdx})">
+                <div class="opt-left">
+                  <span class="opt-key">${String.fromCharCode(65 + oIdx)}</span>
+                  <span class="opt-word">${opt.w}</span>
+                  <span class="opt-ipa">${opt.ipa}</span>
+                </div>
+                <button class="audio-icon" onclick="event.stopPropagation(); playAudio('${opt.w}')">🔊</button>
+              </div>
+            `).join('')}
+          </div>
+          <div class="explanation-box" id="exp_${currentEx}_${qIdx}">
+            <strong style="color: var(--primary);">${q.ans === null ? 'CHƯA CÓ ĐÁP ÁN TRONG TÀI LIỆU' : `ĐÁP ÁN ĐÚNG: ${String.fromCharCode(65 + q.ans)}. ${q.opts[q.ans].w} (${q.opts[q.ans].ipa})`}</strong>
+            <p style="margin-top: 6px; font-size: 0.9rem;">${q.rule}</p>
+          </div>
+        </div>
+      `).join('');
+    }
+
+    function checkQuizAns(ex, qIdx, selectedIdx) {
+      const q = rawData[ex][qIdx];
+      const expBox = document.getElementById(`exp_${ex}_${qIdx}`);
+      
+      q.opts.forEach((_, oIdx) => {
+        const btn = document.getElementById(`opt_${ex}_${qIdx}_${oIdx}`);
+        btn.classList.remove('correct', 'incorrect');
+        if (q.ans !== null && oIdx === q.ans) {
+          btn.classList.add('correct');
+        } else if (oIdx === selectedIdx) {
+          btn.classList.add('incorrect');
+        }
+      });
+
+      expBox.classList.add('show');
+    }
+
+    function renderCard() {
+      const allQ = getAllFlashcardQuestions();
+      const q = allQ[fcIndex];
+      fcAnswered = false;
+      document.getElementById('card').classList.remove('flipped');
+      document.getElementById('fcNum').innerText = `Câu ${fcIndex + 1}/${allQ.length}`;
+      
+      document.getElementById('fcOptions').innerHTML = q.opts.map((opt, i) => `
+        <div class="option-btn" id="fc_opt_${fcIndex}_${i}" onclick="checkFcAns(${i})">
+          <div class="opt-left">
+            <span class="opt-key">${String.fromCharCode(65 + i)}</span>
+            <span class="opt-word">${opt.w}</span>
+            <span class="opt-ipa">${opt.ipa}</span>
+          </div>
+          <button class="audio-icon" onclick="event.stopPropagation(); playAudio('${opt.w}')">🔊</button>
+        </div>
+      `).join('');
+
+      document.getElementById('fcCorrectWord').innerText = q.ans === null ? 'Chưa có đáp án trong tài liệu' : String.fromCharCode(65 + q.ans) + '. ' + q.opts[q.ans].w + ' (' + q.opts[q.ans].ipa + ')';
+      document.getElementById('fcRule').innerText = q.rule;
+      
+      document.getElementById('fcMeanings').innerHTML = q.opts.map(opt => `
+        <div class="meaning-card">
+          <span class="meaning-title">${opt.w}:</span> ${opt.mean}
+        </div>
+      `).join('');
+    }
+
+    function checkFcAns(selectedIdx) {
+      if (fcAnswered) return;
+      fcAnswered = true;
+      const allQ = getAllFlashcardQuestions();
+      const q = allQ[fcIndex];
+
+      q.opts.forEach((_, i) => {
+        const btn = document.getElementById(`fc_opt_${fcIndex}_${i}`);
+        btn.style.pointerEvents = 'none';
+        if (q.ans !== null && i === q.ans) {
+          btn.classList.add('correct');
+        } else if (i === selectedIdx) {
+          btn.classList.add('incorrect');
+        }
+      });
+
+      setTimeout(() => {
+        document.getElementById('card').classList.add('flipped');
+      }, 800);
+    }
+
+    function flipCardManual() {
+      document.getElementById('card').classList.toggle('flipped');
+    }
+
+    function nextCard() {
+      const allQ = getAllFlashcardQuestions();
+      fcIndex = (fcIndex + 1) % allQ.length;
+      renderCard();
+    }
+
+    function prevCard() {
+      const allQ = getAllFlashcardQuestions();
+      fcIndex = (fcIndex - 1 + allQ.length) % allQ.length;
+      renderCard();
+    }
+
+    function renderTable() {
+      const tbody = document.getElementById('dictTable');
+      let allWords = [];
+      Object.values(rawData).forEach(ex => {
+        ex.forEach(q => {
+          allWords = allWords.concat(q.opts);
+        });
+      });
+
+      tbody.innerHTML = allWords.map(item => `
+        <tr>
+          <td style="font-weight: 600;">${item.w}</td>
+          <td style="color: var(--text-muted);">${item.ipa}</td>
+          <td><button class="audio-icon" onclick="playAudio('${item.w}')">🔊</button></td>
+          <td>${item.mean}</td>
+        </tr>
+      `).join('');
+    }
+
+    function filterTable() {
+      const input = document.getElementById('searchInput').value.toLowerCase();
+      const rows = document.querySelectorAll('#dictTable tr');
+      rows.forEach(row => {
+        const text = row.innerText.toLowerCase();
+        row.style.display = text.includes(input) ? '' : 'none';
+      });
+    }
+
+    // Khởi chạy mặc định
+    switchEx(1);
+  </script>
+</body>
+</html>
